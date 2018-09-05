@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Classroom extends Model
 {
+    protected $fillable = ['description'];
+
     /**
      * mapeamento do relacionamento com estudantes
      *

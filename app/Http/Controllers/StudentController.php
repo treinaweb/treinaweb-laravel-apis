@@ -27,7 +27,13 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        try {
+            return Student::create($request->all());
+        } catch (\Throwable $e) {
+            return response()->json([
+                'message' => $e->getMessage()
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**

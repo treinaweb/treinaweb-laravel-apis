@@ -18,6 +18,8 @@ trait ApiException {
     if ($e instanceof ModelNotFoundException) {
       return $this->notFoundException();
     }
+
+    return $this->genericException();
   }
 
   /**
@@ -31,6 +33,20 @@ trait ApiException {
       "Recurso não encontrado",
       "01",
       404
+    );
+  }
+
+  /**
+   * Retornar o erro 404
+   *
+   * @return void
+   */
+  public function genericException()
+  {
+    return $this->getResponse(
+      "Erro interno no servidor",
+      "02",
+      500
     );
   }
 

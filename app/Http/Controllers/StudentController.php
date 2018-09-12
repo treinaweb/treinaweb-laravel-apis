@@ -87,6 +87,20 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::find($id);
+
+        if (!$student) {
+            return response()->json(['message' => 'Nao encontrado'], Response::HTTP_NOT_FOUND);
+        }
+
+        try {
+            $student->delete();
+
+            return [];
+        } catch (\Throwable $e) {
+            return response()->json([
+                'message' => $e->getMessage()
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 }

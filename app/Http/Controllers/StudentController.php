@@ -42,23 +42,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Student $student)
     {
-        $student = Student::find($id);
+        return $student;
 
-        if($student) {
-            return response()->json($student, Response::HTTP_FOUND);
-        }
-
-        return response()->json([
-            "errors" => [
-                [
-                    "status" => 404,
-                    "code" => "01",
-                    "message" => "O recurso não foi encontrado"
-                ]
-            ]
-        ], Response::HTTP_NOT_FOUND);
     }
 
     /**
@@ -68,14 +55,8 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Student $student)
     {
-        $student = Student::find($id);
-
-        if (!$student) {
-            return response()->json(['message' => 'Nao encontrado'], Response::HTTP_NOT_FOUND);
-        }
-
         try {
             $student->update($request->all());
 
@@ -93,14 +74,8 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Student $student)
     {
-        $student = Student::find($id);
-
-        if (!$student) {
-            return response()->json(['message' => 'Nao encontrado'], Response::HTTP_NOT_FOUND);
-        }
-
         try {
             $student->delete();
 

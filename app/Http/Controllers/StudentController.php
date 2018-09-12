@@ -50,7 +50,15 @@ class StudentController extends Controller
             return response()->json($student, Response::HTTP_FOUND);
         }
 
-        return response()->json(['message' => 'Nao encontrado'], Response::HTTP_NOT_FOUND);
+        return response()->json([
+            "errors" => [
+                [
+                    "status" => 404,
+                    "code" => "01",
+                    "message" => "O recurso não foi encontrado"
+                ]
+            ]
+        ], Response::HTTP_NOT_FOUND);
     }
 
     /**

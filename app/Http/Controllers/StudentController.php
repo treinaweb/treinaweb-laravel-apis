@@ -27,6 +27,8 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        return Student::create($request->all());
+
         try {
             return Student::create($request->all());
         } catch (\Throwable $e) {

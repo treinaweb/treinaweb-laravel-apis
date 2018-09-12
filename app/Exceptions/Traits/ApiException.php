@@ -3,6 +3,7 @@
 namespace App\Exceptions\Traits;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 trait ApiException {
 
@@ -13,10 +14,14 @@ trait ApiException {
    * @param [type] $e
    * @return void
    */
-  public function getJsonException($request, $e)
+  protected function getJsonException($request, $e)
   {
     if ($e instanceof ModelNotFoundException) {
       return $this->notFoundException();
+    }
+
+    if ($e instanceof HttpException) {
+      return $this->httpException($e);
     }
 
     return $this->genericException();
@@ -27,7 +32,7 @@ trait ApiException {
    *
    * @return void
    */
-  public function notFoundException()
+  protected function notFoundException()
   {
     return $this->getResponse(
       "Recurso não encontrado",
@@ -37,16 +42,42 @@ trait ApiException {
   }
 
   /**
-   * Retornar o erro 404
+   * Retornar o erro 500
    *
    * @return void
    */
-  public function genericException()
+  protected function genericException()
   {
     return $this->getResponse(
       "Erro interno no servidor",
       "02",
       500
+    );
+  }
+
+  /**
+   * Retornar o erro de http
+   *
+   * @return void
+   */
+  protected function httpException($e)
+  {
+    //não usar desse modo em produção
+    $messages = [
+      405 => [
+        "code" => "03",
+        "message" => "Verbo Http não permitido"
+      ],
+      403 => [
+        "code" => "04",
+        "message" => "Acesso não permitido"
+      ]
+    ];
+
+    return $this->getResponse(
+      $messages[$e->getStatusCode()]["message"],
+      $messages[$e->getStatusCode()]["code"],
+      $e->getStatusCode()
     );
   }
 
@@ -58,7 +89,7 @@ trait ApiException {
    * @param [type] $status
    * @return void
    */
-  public function getResponse($message, $code, $status)
+  protected function getResponse($message, $code, $status)
   {
     return response()->json([
       "errors" => [

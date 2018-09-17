@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Requests\StudentRequest;
 
 class StudentController extends Controller
 {
@@ -24,16 +25,9 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentRequest $request)
     {
-        \Validator::make($request->all(), [
-            'name' => 'required',
-            'gerder' => 'required',
-            'birth' => 'required|integer',
-            'classroom_id' => 'required'
-        ])->validate();
-
-        return Student::create($request->all());
+       return Student::create($request->all());
     } 
 
     /**
@@ -54,7 +48,7 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(StudentRequest $request, Student $student)
     {
         $student->update($request->all());
 

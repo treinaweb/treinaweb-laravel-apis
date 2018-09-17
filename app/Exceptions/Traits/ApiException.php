@@ -4,6 +4,7 @@ namespace App\Exceptions\Traits;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Illuminate\Validation\ValidationException;
 
 trait ApiException {
 
@@ -22,6 +23,10 @@ trait ApiException {
 
     if ($e instanceof HttpException) {
       return $this->httpException($e);
+    }
+
+    if ($e instanceof ValidationException) {
+      return $this->validationException($e);
     }
 
     return $this->genericException();
@@ -53,6 +58,16 @@ trait ApiException {
       "02",
       500
     );
+  }
+
+  /**
+   * Retornar o erro de validação
+   *
+   * @return void
+   */
+  protected function validationException($e)
+  {
+    return response()->json($e->errors(), $e->status);
   }
 
   /**

@@ -12,6 +12,10 @@ class Student extends Model
         'birth' => 'date:d/m/Y'
     ];
 
+    //protected $hidden = ['created_at', 'updated_at'];
+
+    protected $visible = ['name', 'gerder', 'birth', 'classroom_id'];
+
     /**
      * mapeamento do relacionamento com salas de aula
      *

@@ -16,7 +16,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return response()->json(Student::get(), Response::HTTP_OK);
+        return response()->json(Student::get()->makeVisible('created_at'), Response::HTTP_OK);
     }
 
     /**

@@ -8,6 +8,10 @@ class Student extends Model
 {
     protected $fillable = ['name', 'birth', 'gerder', 'classroom_id'];
 
+    protected $casts = [
+        'birth' => 'date:d/m/Y'
+    ];
+
     /**
      * mapeamento do relacionamento com salas de aula
      *

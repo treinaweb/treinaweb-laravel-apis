@@ -26,8 +26,19 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'name' => 'required',
+            'gerder' => 'required',
+            'birth' => 'required',
+            'classroom_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
         return Student::create($request->all());
-    }
+    } 
 
     /**
      * Display the specified resource.

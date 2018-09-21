@@ -6,6 +6,7 @@ use App\Models\Student;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\StudentRequest;
+use App\Http\Resources\Student as StudentResource;
 
 class StudentController extends Controller
 {
@@ -38,7 +39,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return $student;
+        return new StudentResource($student);
     }
 
     /**

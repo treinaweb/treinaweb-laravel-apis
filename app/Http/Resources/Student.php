@@ -19,7 +19,7 @@ class Student extends JsonResource
             'name'  => $this->name,
             'birth' => $this->birth,
             'gender' => $this->gerder,
-            'classroom' => new Classroom($this->classroom) 
+            'classroom' => new Classroom($this->whenLoaded('classroom')) 
         ];
     }
 }

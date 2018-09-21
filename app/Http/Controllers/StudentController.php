@@ -16,10 +16,16 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->query('includes') === 'classroom') {
+            $students = Student::with('classroom')->get();
+        } else {
+            $students = Student::get();
+        }
+
         return response()->json(
-            new StudentCollection(Student::get()), 
+            new StudentCollection($students), 
             Response::HTTP_OK
         );
     }

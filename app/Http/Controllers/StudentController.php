@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\StudentRequest;
 use App\Http\Resources\Student as StudentResource;
+use App\Http\Resources\Students as StudentCollection;
 
 class StudentController extends Controller
 {
@@ -17,7 +18,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return response()->json(Student::get()->makeVisible('created_at'), Response::HTTP_OK);
+        return response()->json(
+            new StudentCollection(Student::get()), 
+            Response::HTTP_OK
+        );
     }
 
     /**

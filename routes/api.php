@@ -22,3 +22,5 @@ Route::get('/students/{student}', 'StudentController@show');
 Route::post('/students', 'StudentController@store');
 Route::put('/students/{student}', 'StudentController@update');
 Route::delete('/students/{student}', 'StudentController@destroy');
+
+Route::apiResource('classrooms', 'ClassroomController');

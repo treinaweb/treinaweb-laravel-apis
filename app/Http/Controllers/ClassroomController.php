@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Classroom;
+use League\Fractal\Resource\Item;
+use League\Fractal\Resource\Collection;
+use App\Http\Resources\ClassroomTransformer;
+use League\Fractal\Manager;
+use League\Fractal\Serializer\DataArraySerializer;
 
 class ClassroomController extends Controller
 {
@@ -14,7 +19,15 @@ class ClassroomController extends Controller
      */
     public function index()
     {
-        return Classroom::get();
+        $resource = new Collection(
+            Classroom::get(),
+            new ClassroomTransformer()
+        );
+
+        $manager = new Manager();
+        $manager->setSerializer(new DataArraySerializer());
+
+        return $manager->createData($resource)->toArray();
     }
 
     /**
@@ -25,7 +38,15 @@ class ClassroomController extends Controller
      */
     public function show(Classroom $classroom)
     {
-        return $classroom;
+        $resource = new Item(
+            $classroom,
+            new ClassroomTransformer()
+        );
+
+        $manager = new Manager();
+        $manager->setSerializer(new DataArraySerializer());
+
+        return $manager->createData($resource)->toArray();
     }
 
     /**

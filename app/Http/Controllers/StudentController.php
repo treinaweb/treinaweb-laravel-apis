@@ -19,15 +19,14 @@ class StudentController extends Controller
     public function index(Request $request)
     {
         if ($request->query('includes') === 'classroom') {
-            $students = Student::with('classroom')->get();
+            $students = Student::with('classroom')->paginate(1);
         } else {
-            $students = Student::get();
+            $students = Student::paginate(1);
         }
 
-        return response()->json(
-            new StudentCollection($students), 
-            Response::HTTP_OK
-        );
+        return (new StudentCollection($students))
+                    ->response()
+                    ->setStatusCode(Response::HTTP_OK);
     }
 
     /**

@@ -18,9 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/students', 'StudentController@index');
-Route::get('/students/{student}', 'StudentController@show');
-Route::post('/students', 'StudentController@store');
-Route::put('/students/{student}', 'StudentController@update');
-Route::delete('/students/{student}', 'StudentController@destroy');
+Route::get('/students/{student}', 'StudentController@show')->name('students.show');
+Route::post('/students', 'StudentController@store')->name('students.store');
+Route::put('/students/{student}', 'StudentController@update')->name('students.update');
+Route::delete('/students/{student}', 'StudentController@destroy')->name('students.destroy');
 
 Route::apiResource('classrooms', 'ClassroomController');

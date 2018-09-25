@@ -19,7 +19,7 @@ class Students extends ResourceCollection
         return [
             'data' => $this->collection,
             'links' => [
-                'self' => 'treinaweb'
+                'create' => route('students.store')
             ]
         ];
     }

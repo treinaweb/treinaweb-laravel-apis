@@ -1,0 +1,71 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API Treinaweb",
+        "description": "Projeto de API do curso de Laravel do Treinaweb",
+        "contact": {
+            "email": "elton.fonseca@treinaweb.com.br"
+        },
+        "version": "1.0.0"
+    },
+    "host": "http://escola.test",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/students": {
+            "get": {
+                "tags": [
+                    "students"
+                ],
+                "summary": "Get list of students",
+                "description": "Returns list of students",
+                "operationId": "getstudentsList",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key_security_example": []
+                    }
+                ]
+            }
+        },
+        "/students/{id}": {
+            "get": {
+                "tags": [
+                    "students"
+                ],
+                "summary": "Get Student information",
+                "description": "Returns Student data",
+                "operationId": "getStudentById",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2_security_example": [
+                            "write:students",
+                            "read:students"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {}
+}

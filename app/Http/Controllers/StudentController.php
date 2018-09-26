@@ -1,5 +1,22 @@
 <?php
 
+/**
+ * @SWG\Swagger(
+ *     basePath="/api",
+ *     schemes={"http"},
+ *     host="http://escola.test",
+ *     @SWG\Info(
+ *         version="1.0.0",
+ *         title="API Treinaweb",
+ *         description="Projeto de API do curso de Laravel do Treinaweb",
+ *         @SWG\Contact(
+ *             email="elton.fonseca@treinaweb.com.br"
+ *         ),
+ *     )
+ * )
+ */
+
+
 namespace App\Http\Controllers;
 
 use App\Models\Student;
@@ -11,6 +28,27 @@ use App\Http\Resources\Students as StudentCollection;
 
 class StudentController extends Controller
 {
+
+    /**
+     * @SWG\Get(
+     *      path="/students",
+     *      operationId="getstudentsList",
+     *      tags={"students"},
+     *      summary="Get list of students",
+     *      description="Returns list of students",
+     *      @SWG\Response(
+     *          response=200,
+     *          description="successful operation"
+     *       ),
+     *       @SWG\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
+     * Returns list of students
+     */
+
     /**
      * Display a listing of the resource.
      *
@@ -40,6 +78,29 @@ class StudentController extends Controller
        return Student::create($request->all());
     } 
 
+
+
+    /**
+     * @SWG\Get(
+     *      path="/students/{id}",
+     *      operationId="getStudentById",
+     *      tags={"students"},
+     *      summary="Get Student information",
+     *      description="Returns Student data",
+     *      @SWG\Response(
+     *          response=200,
+     *          description="successful operation"
+     *       ),
+     *      @SWG\Response(response=400, description="Bad request"),
+     *      @SWG\Response(response=404, description="Resource Not Found"),
+     *      security={
+     *         {
+     *             "oauth2_security_example": {"write:students", "read:students"}
+     *         }
+     *     },
+     * )
+     *
+     */
     /**
      * Display the specified resource.
      *

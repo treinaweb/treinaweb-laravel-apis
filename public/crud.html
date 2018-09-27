@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Gerenciamento de Alunos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <link rel="stylesheet" href="crud.css">
 </head>
 <body>
 
@@ -23,6 +23,23 @@
       <tbody id="list-body">
       </tbody>
     </table>
+
+    <button id="create-button">Adicionar estudante</button>
+  </div>
+
+  <div id="register-div" class="hide">
+    <h1>Cadastro</h1>
+    <form id="register-form">
+      <input type="text" name="name" id="name" placeholder="Nome"><br>
+      <input type="text" name="birth" id="birth" placeholder="Nascimento"><br>
+      <select name="gender" id="gender">
+        <option value="">Gênero</option>
+        <option value="M">Masculino</option>
+        <option value="F">Feminino</option>
+      </select><br>
+      <input type="text" name="classroom" id="classroom" placeholder="Sala de Aula"><br>
+      <button>Gravar</button>
+    </form>
   </div>
   
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

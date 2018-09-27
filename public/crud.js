@@ -4,8 +4,17 @@ $(document).ready(function() {
   list();
 
   $('#list-body').on('click', '.delete-button', function(){
-    excluir($(this).attr("data-id"))
+    destroy($(this).attr("data-id"))
   })
+
+  $('#create-button').click(function() {
+    $('#register-div').css('display', 'block');
+  })
+
+  $('#register-form').submit(function(event) {
+    event.preventDefault();
+    create();
+  });
 
 });
 
@@ -36,7 +45,7 @@ function list() {
   });
 }
 
-function excluir(id) {
+function destroy(id) {
   $.ajax({
     type: "DELETE",
     url: `${baseUrl}/students/${id}`,
@@ -47,4 +56,8 @@ function excluir(id) {
       list();
     }
   });
+}
+
+function create(){
+  alert('cregou no create');
 }

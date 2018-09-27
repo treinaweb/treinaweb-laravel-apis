@@ -17,7 +17,13 @@ $(document).ready(function() {
 
   $('#register-form').submit(function(event) {
     event.preventDefault();
-    create();
+
+    let id = $('#id').val();
+    if (id == "") {
+      create();
+    } else {
+      update(id);
+    }
   });
 
 });
@@ -55,7 +61,7 @@ function destroy(id) {
     type: "DELETE",
     url: `${baseUrl}/students/${id}`,
     contentType: "application/json",
-    success: function(students) {
+    success: function() {
       alert('O aluno foi excluido com sucesso!');
 
       list();
@@ -70,8 +76,24 @@ function create(){
     contentType: "application/json",
     dataType: 'json',
     data: getStudentJsonFromForm(), 
-    success: function(students) {
+    success: function() {
       alert('O aluno foi criado com sucesso!');
+
+      clearHideForm();
+      list();
+    }
+  });
+}
+
+function update(id) {
+  $.ajax({
+    type: "PUT",
+    url: `${baseUrl}/students/${id}`,
+    contentType: "application/json",
+    dataType: 'json',
+    data: getStudentJsonFromForm(), 
+    success: function() {
+      alert('O aluno foi atualizado com sucesso!');
 
       clearHideForm();
       list();
@@ -88,6 +110,7 @@ function mountFormForUpdate(id) {
     },
     contentType: "application/json",
     success: function(student) {
+      $("#id").val(student.data.id);
       $("#name").val(student.data.name);
       $("#birth").val(student.data.birth);
       $("#classroom").val(student.data.classroom.id);
@@ -99,6 +122,7 @@ function mountFormForUpdate(id) {
 }
 
 function clearHideForm() {
+  $('#id').val('');
   $('#name').val('');
   $('#birth').val('');
   $('#classroom').val('');

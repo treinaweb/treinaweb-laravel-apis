@@ -81,6 +81,9 @@ function create(){
 
       clearHideForm();
       list();
+    },
+    error: function(error) {
+      showValidationErros(error);
     }
   });
 }
@@ -97,6 +100,9 @@ function update(id) {
 
       clearHideForm();
       list();
+    },
+    error: function(error) {
+      showValidationErros(error);
     }
   });
 }
@@ -141,4 +147,15 @@ function getStudentJsonFromForm() {
 
 function formShow() {
   $('#register-div').css('display', 'block');
+}
+
+function showValidationErros(error){
+  if (error.status == 422) {
+    let errors = error.responseJSON;
+    for (const key in errors) {
+      alert(`${key}: ${errors[key]}`)
+    }
+  } else {
+    alert(error.responseText)
+  }
 }

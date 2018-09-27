@@ -7,8 +7,12 @@ $(document).ready(function() {
     destroy($(this).attr("data-id"))
   })
 
+  $('#list-body').on('click', '.update-button', function(){
+    mountFormForUpdate($(this).attr("data-id"))
+  })
+
   $('#create-button').click(function() {
-    $('#register-div').css('display', 'block');
+    formShow();
   })
 
   $('#register-form').submit(function(event) {
@@ -34,6 +38,7 @@ function list() {
           <td>${student.birth}</td>
           <td>${student.gender}</td>
           <td>
+            <button class="update-button" data-id="${student.id}">Atualizar</button>
             <button class="delete-button" data-id="${student.id}">Excluir</button>
           </td>
         </tr>
@@ -74,6 +79,25 @@ function create(){
   });
 }
 
+function mountFormForUpdate(id) {
+  $.ajax({
+    type: "GET",
+    url: `${baseUrl}/students/${id}`,
+    headers: {
+      "Accept": "application/json"
+    },
+    contentType: "application/json",
+    success: function(student) {
+      $("#name").val(student.data.name);
+      $("#birth").val(student.data.birth);
+      $("#classroom").val(student.data.classroom.id);
+      $("#gender").val(student.data.gender);
+    }
+  });
+  
+  formShow();
+}
+
 function clearHideForm() {
   $('#name').val('');
   $('#birth').val('');
@@ -89,4 +113,8 @@ function getStudentJsonFromForm() {
     "classroom_id": $('#classroom').val(),
     "gerder": $('#gender').find('option:selected').val(),
   });
+}
+
+function formShow() {
+  $('#register-div').css('display', 'block');
 }

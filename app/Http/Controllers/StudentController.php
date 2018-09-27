@@ -57,9 +57,9 @@ class StudentController extends Controller
     public function index(Request $request)
     {
         if ($request->query('includes') === 'classroom') {
-            $students = Student::with('classroom')->paginate(2);
+            $students = Student::with('classroom')->paginate(20);
         } else {
-            $students = Student::paginate(2);
+            $students = Student::paginate(20);
         }
 
         return (new StudentCollection($students))

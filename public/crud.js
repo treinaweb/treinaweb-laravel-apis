@@ -59,5 +59,34 @@ function destroy(id) {
 }
 
 function create(){
-  alert('cregou no create');
+  $.ajax({
+    type: "POST",
+    url: `${baseUrl}/students`,
+    contentType: "application/json",
+    dataType: 'json',
+    data: getStudentJsonFromForm(), 
+    success: function(students) {
+      alert('O aluno foi criado com sucesso!');
+
+      clearHideForm();
+      list();
+    }
+  });
+}
+
+function clearHideForm() {
+  $('#name').val('');
+  $('#birth').val('');
+  $('#classroom').val('');
+  $('#gender').val($('#gender option:first').val());
+  $('#register-div').css('display', 'none');
+}
+
+function getStudentJsonFromForm() {
+  return JSON.stringify({
+    "name": $('#name').val(),
+    "birth": $('#birth').val(),
+    "classroom_id": $('#classroom').val(),
+    "gerder": $('#gender').find('option:selected').val(),
+  });
 }

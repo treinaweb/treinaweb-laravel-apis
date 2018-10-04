@@ -1,65 +1,57 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# TreinaWeb: curso ["Laravel - Desenvolvimento de APIs REST"](https://www.treinaweb.com.br/curso/laravel-desenvolvimento-de-apis-rest)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Lista de commits dos vídeos do curso
+Aula | Video | Commit | Link
+------ | ------ | ------ | ------
+01 | Criando e configurando o projeto | 1 - criação do projeto.zip | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/4a5815523fe7f2d0fe5a888bc52432b341ee0bd5.zip)
+02 | Preparando o banco de dados | 3 - criando as tabelas no banco de dados | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/4a5815523fe7f2d0fe5a888bc52432b341ee0bd5.zip)
+02 | Criando e mapeando os models | 4 - criar model e mapear relacionamentos | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/5657cabd21b3033f73a7c79645a1029b87046cd8.zip)
+02 | Inserindo dados para testar os models | 5 - definindo a propriedade fillable | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/449008a350879db4d2da631b1d832b112dcc2ba1.zip)
+03 | Conhecendo os arquivos de rotas | 6 - conhecendo o arquivo de rotas de api | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/95b53d03f9ad3433e9fcc6a75e7c8a1729b8ebfe.zip)
+03 | A importância dos verbos HTTP | 7 - A importancia dos verbos http | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/b0d12a42d4331c2fc590c5c247445697f511162b.zip)
+03 | Criando a lista de recursos | 8 - criando o index | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/916be1ea7b70773ca5dd57d87cb6443a02dee768.zip)
+03 | Trabalhando com respostas personalizadas | 10 - trabalhando com as responses | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/783d5b89293b744d5e5f55a6ca4ff0ff1dbb354d.zip)
+04 | Implementando endpoint de visualização | 11 - Implementado ação show | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/268e9f3c57fedf5e3692863d208f45ed474cebff.zip)
+04 | Trabalhando com requests | 12 - trabalhando com request | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/d269c8edb610dbc641aaa2a623a9f22bfa352ed9.zip)
+04 | Implementando endpoint de criação | 13 - criando novos registros | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/7213bed4610e068f2bb2e8ac636e625f961c625a.zip)
+04 | Implementando endpoint de atualização | 14 - atualizando recurso | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/36af78ddc2eda7645cc7c07c67c592b545001aa2.zip)
+04 | Implementando endpoint de exclusão | 15 - apagando alunos | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/35272749d63e4ec00d99be4c816064f167976a6f.zip)
+05 | Retornando erros diretamente | 17 - retornando erro na prática | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/5d6f675dd872d0ac3e2348746b219ed43bd9f304.zip)
+05 | Tratando erro 404 | 18 - tratando ModelNotFound | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/401efe1633b9f2ca7e6c156a852e4cde2aed5a55.zip)
+05 | Melhorando o tratamento de erro | 19 - melhorando o retorno 404 | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/38c419ce7b970bb36171d4d50e626df5affb4d4b.zip)
+05 | Tratando erro interno | 20 - Trantando erros internos no servidor | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/90635053649a065bbfe2f9490ad38d20ae028681.zip)
+05 | Tratando erro HTTP | 21 - tratando erros http | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/7556210d6636d92283cca48e1460a8992e2a19ad.zip)
+06 | Validando de forma manual | 22 - validação manual | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/93feb5543486337f7fc79980f3152e47b575cbfd.zip)
+06 | Tratando exceção de validação | 23 - tratando exceção de validação | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/3817e5564ca3cb75b3b05d1aff31bd262326e69c.zip)
+06 | Validando com form request | 24 - validando com form request | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/ad0c14e0f146cf30ffc3a6cbdd685b61fb305f22.zip)
+07 | Serialização no Eloquent | 25 - serialização | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/9291d0e1330e595cef45076bf3774c86bce0d41d.zip)
+07 | Escolhendo dados para serialização | 26 - escondendo e mostrando atributos na serialização | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/8f5c8580166a5521a95de75adb46c1d3e15a7bda.zip)
+07 | Adicionando atributos dinâmico na serialização | 27 - anexando atributos na serialização | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/f3be02e45d4cb7648d9b3771ebded5078904e436.zip)
+08 | Camada de transformação | 28 - camada de transformação | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/64be81ac0b050a59206211dfea71374e07d139de.zip)
+08 | Transformando item único | 29 - Criando resource para transformar model unico | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/dfe8b8b484d91d277210f67e4a952e369d3bf2f3.zip)
+08 | Transformando coleção de dados | 30 - resource collection | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/6ae5842e008457c1166b3ffea9ad7ba9af8c1028.zip)
+08 | Padrão de retorno | 31 - padrões de retorno | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/fd463f71fe3ef2dbd50d12e4099bb979ffd16920.zip)
+08 | Trabalhando com relações | 32 - implementando relação | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/79099025fd63bcbab085777f6667e1d644571295.zip)
+08 | Carregando a relação opcional | 33 - implementando a relação opcional | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/a128d77a26731e957580e223140a20539480cfbf.zip)
+08 | Paginação | 34 - deploy app java no ambiente padrão | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/0ba9eba6b8245f0485e298c788ad92db2ec01f51.zip)
+08 | Exibindo salas de aula  | 35 - criando controller de salas de aula | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/a0e0281ff2ffe5102f9558f9f4c29ad077f85799.zip)
+08 | Usando Package Fractal | 36 - usando fractal | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/7d8e3981c6df3b350c88b1eaa939b60a71cb5af8.zip)
+09 | Melhorando o processo de criação do HETEOAS | 38 - Melhorando o processo de criação do HETEOAS | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/d33313094436a5c343bc1ca303cdcc85ffc9015a.zip)
+10 | Content negotiation | 39 - Content negotiation | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/48b1c03ab35e09f078fb46e1270406ceef12a9be.zip)
+10 | Rate Limiting | 40 - rate limiting | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/d49e81e40078243be51b058b222ac08279d3da5d.zip)
+10 | Controle CORS | 41 - Controle de CORS | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/2eee8782a2966ff94dd8325608adeddda5d16f69.zip)
+10 | Documentando a API com Swagger UI | 42 - gerando a documentação com swagger | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/89638f6cb2f4a55ed6844d0323bf98bf46d140be.zip)
+11 | Criando a listagem de estudantes | 43 - listando estudantes (app cliente) | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/15f38c965d708224f6853801b1fceb68f23dc760.zip)
+11 | Excluindo estudantes | 44 - Excluindo estudantes(app cliente) | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/40d3ad4605295501eb2c62bb54b403e7993a2fb5.zip)
+11 | Criação do formulário de cadastro | 45 - mostrando form de cadastro (app cliente) | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/e8b3f5cf37d4b2870621f158364da910bce90a92.zip)
+11 | Adicionando novo estudante | 46 - cria o estudante na api (app cliente) | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/5dc811546a405f78f333d6b2a3fa02b82f7d0146.zip)
+11 | Carregando a sala de aula na API | 47 - Carregando a relação com sala de aula | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/2631b24ffd8c7a8f95b20f104b0a650358dac52b.zip)
+11 | Polulando o formulário para edição | 48 - montar formulario para atualização (app cliente) | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/f184362bc1259e38b2ad8f3b1372d1a203efc53d.zip)
+11 | Atualizando o estudante | 49 - atualizando o estudante (app cliente) | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/518b9cfed772c74a6e23f9214132bfdf6e6d7876.zip)
+11 | Exibindo erros de validação para o usuário | 50 - mostrando erros de validação | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/90b201b34d9b442642e62d3609c9bbebba9ef680.zip)
